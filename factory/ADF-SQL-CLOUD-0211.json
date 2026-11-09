@@ -1,0 +1,15 @@
+{
+	"name": "ADF-SQL-CLOUD-0211",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "33663eb0-07a9-4882-b775-3861a47514d0",
+		"tenantId": "b76872ac-d752-4ea1-9a3c-d041e4976031"
+	}
+}

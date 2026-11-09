@@ -1,0 +1,20 @@
+{
+	"name": "DS_PARQUE_EVENTSINK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DS_PARQUE_EVENTSINK",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "opeventsinkcontainer"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

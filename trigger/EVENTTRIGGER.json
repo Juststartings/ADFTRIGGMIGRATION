@@ -1,0 +1,24 @@
+{
+	"name": "EVENTTRIGGER",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "eventtrigger",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/eventtriggeripcontainer/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/9a48c010-6c84-45f5-879d-ed2249504ec1/resourceGroups/RG_SQL_ADLS/providers/Microsoft.Storage/storageAccounts/adlscsvsrc0911",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
