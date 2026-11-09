@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-SQL-CLOUD-0211"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"DS_PARQUE_EVENTSINK_accountKey": {
+			"value": ""
+		},
+		"DS_SINL_PARQUE_accountKey": {
+			"value": ""
+		},
+		"LS_SRC_CSV_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlscsvsrc0911.dfs.core.windows.net/"
+		},
+		"DS_PARQUE_EVENTSINK_properties_typeProperties_url": {
+			"value": "https://adlsparquetsink0911.dfs.core.windows.net/"
+		},
+		"DS_SINL_PARQUE_properties_typeProperties_url": {
+			"value": "https://adlsparquetsink0911.dfs.core.windows.net/"
+		},
+		"LS_SRC_CSV_properties_typeProperties_url": {
+			"value": "https://adlscsvsrc0911.dfs.core.windows.net/"
+		},
+		"EVENTTRIGGER_properties_typeProperties_scope": {
+			"value": "/subscriptions/9a48c010-6c84-45f5-879d-ed2249504ec1/resourceGroups/RG_SQL_ADLS/providers/Microsoft.Storage/storageAccounts/adlscsvsrc0911"
+		}
+	}
+}

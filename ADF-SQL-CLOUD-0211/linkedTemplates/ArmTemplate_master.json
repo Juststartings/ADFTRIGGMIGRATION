@@ -1,0 +1,105 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ADF-SQL-CLOUD-0211"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"DS_PARQUE_EVENTSINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_PARQUE_EVENTSINK'"
+		},
+		"DS_SINL_PARQUE_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_SINL_PARQUE'"
+		},
+		"LS_SRC_CSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SRC_CSV'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlscsvsrc0911.dfs.core.windows.net/"
+		},
+		"DS_PARQUE_EVENTSINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsparquetsink0911.dfs.core.windows.net/"
+		},
+		"DS_SINL_PARQUE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsparquetsink0911.dfs.core.windows.net/"
+		},
+		"LS_SRC_CSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlscsvsrc0911.dfs.core.windows.net/"
+		},
+		"EVENTTRIGGER_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/9a48c010-6c84-45f5-879d-ed2249504ec1/resourceGroups/RG_SQL_ADLS/providers/Microsoft.Storage/storageAccounts/adlscsvsrc0911"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ADF-SQL-CLOUD-0211_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"DS_PARQUE_EVENTSINK_accountKey": {
+						"value": "[parameters('DS_PARQUE_EVENTSINK_accountKey')]"
+					},
+					"DS_SINL_PARQUE_accountKey": {
+						"value": "[parameters('DS_SINL_PARQUE_accountKey')]"
+					},
+					"LS_SRC_CSV_accountKey": {
+						"value": "[parameters('LS_SRC_CSV_accountKey')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"DS_PARQUE_EVENTSINK_properties_typeProperties_url": {
+						"value": "[parameters('DS_PARQUE_EVENTSINK_properties_typeProperties_url')]"
+					},
+					"DS_SINL_PARQUE_properties_typeProperties_url": {
+						"value": "[parameters('DS_SINL_PARQUE_properties_typeProperties_url')]"
+					},
+					"LS_SRC_CSV_properties_typeProperties_url": {
+						"value": "[parameters('LS_SRC_CSV_properties_typeProperties_url')]"
+					},
+					"EVENTTRIGGER_properties_typeProperties_scope": {
+						"value": "[parameters('EVENTTRIGGER_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
